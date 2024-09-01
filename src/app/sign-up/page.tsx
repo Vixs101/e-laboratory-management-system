@@ -71,7 +71,7 @@ export default function SignUp() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <form className="bg-gray-800 p-10 rounded-lg shadow-xl w-2/3 md:w-1/2 lg:w-1/3">
+      <form className="bg-gray-800 p-5 md:p-10 rounded-lg shadow-xl w-11/12 md:w-1/2 lg:w-1/3 transition-all duration-200 ease-out">
         <div className="text-white text-center mb-2">
           <h1 className="font-bold text-3xl">Welcome to the E-labs!</h1>
           <p className="text-">Your sure plug for laboratory insights</p>
@@ -147,7 +147,7 @@ export default function SignUp() {
         {error && <div className="mt-3 text-center text-red-600">{error}</div>}
 
         {loginType === "login" && (
-          <div className="font-semibold mt-3 text-center">
+          <div className="font-semibold mt-3 text-center transition-all duration-100 ease-in-out">
             <p
               onClick={() => {
                 console.log("clicked forgot password");
