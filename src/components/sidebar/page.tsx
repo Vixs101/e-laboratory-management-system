@@ -1,9 +1,12 @@
 "use client"
+//import { useState } from "react";
 import Link from "next/link";
 
 export default function Sidebar() {
+  // const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white flex flex-col">
+    <div className="fixed top-0 left-0 h-full lg:w-64 bg-gray-800 text-white flex flex-col sidebar sidebar-open">
        <h1 className="px-8 py-4  text-2xl font-bold">E-labs</h1>
        <nav className="flex-1  p-4">
           <ul className="text-lg">

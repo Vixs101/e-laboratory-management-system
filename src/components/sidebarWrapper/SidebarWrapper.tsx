@@ -1,18 +1,31 @@
 "use client"
-import React, { ReactNode } from "react"
+import React, { useEffect, useState, ReactNode } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../app/firebase/config.js";
 import { usePathname } from "next/navigation";
 import Sidebar from "../sidebar/page.tsx";
 
 function SidebarWrapper( { children }: {children: React.ReactNode}) {
+  const [authenticated, setAuthenticated] = useState(false);
   const pathname = usePathname();
-  const showSideBar = pathname !== "/sign-up";
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setAuthenticated(!!user);
+
+    })
+
+    return () => unsubscribe();
+  }, []);
+
+  const showSideBar = pathname !== "/sign-up" && authenticated;
 
   return (
     <div className="flex">
       {showSideBar && <Sidebar /> }
       <main className="flex-1"> 
         {children}
-      </main>
+      </main>
     </div>
   )
 }
