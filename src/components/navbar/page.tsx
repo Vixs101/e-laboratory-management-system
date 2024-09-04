@@ -44,32 +44,7 @@ const links = [
   },
 ];
 
-// // function to signout users
-// function handleSignOut(navigate) {
-//   signOut(auth)
-//     .then(() => {
-//       navigate("/login");
-//       return null;
-//     })
-//     .catch((error) => {
-//       // Handle errors with specific messages
-//       let errorMessage = "Sign out failed. Please try again.";
-//       switch (error.code) {
-//         case "auth/network-request-failed":
-//           errorMessage =
-//             "Network error. Please check your internet connection.";
-//           break;
-//         case "auth/too-many-requests":
-//           errorMessage = "Too many sign-out attempts. Please try again later.";
-//           break;
-//         default:
-//           console.error("Sign out error:", error);
-//       }
-//       alert(errorMessage);
-//     });
-// }
 
-// main function
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -96,9 +71,9 @@ export default function Navbar() {
   }
 
   return (
-    <div className="w-screen bg-gray-800 flex flex-row-reverse md:flex-row fixed justify-between items-center py-2 px-4 md:p-2 md:ml-56 lg:ml-64 text-white">
+    <div className="w-screen bg-gray-800 flex flex-row-reverse md:flex-row fixed justify-between items-center py-2 px-4 md:p-2 md:ml-56 lg:ml-64 text-white md:border-l-2 border-indigo-600 ">
       <IoHome className="md:hidden  w-7 h-7 font-extrabold cursor-pointer duration-500" />
-      <h1 className="hidden md:flex ml-10 text-xl font-semibold cursor-pointer">Home</h1> 
+      <h1 className="hidden md:flex ml-12 text-2xl font-semibold cursor-pointer">Home</h1> 
       <div className="flex items-center gap-4">
         {/* rendering the open and close icon conditionally */}
 
