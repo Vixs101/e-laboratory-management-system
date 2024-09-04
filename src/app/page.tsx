@@ -1,5 +1,11 @@
 import Image from "next/image";
 import AuthGuard from "@/components/auth-guard/page";
+import { Sacremento } from "next/font/google";
+
+const sacremento  = Sacremento({
+  subsets: ["latin"],
+  weight:"400",
+});
 
 export default function Home() {
   return (
@@ -13,6 +19,7 @@ export default function Home() {
             </p>
             <button
               type="button"
+              style={{ fontFamily: sacramento.style.fontFamily }}
               className={
                 "rounded text-white text-center w-1/3 p-2 mt-10 text-xl bg-indigo-600 hover:bg-indigo-500"}
             >
