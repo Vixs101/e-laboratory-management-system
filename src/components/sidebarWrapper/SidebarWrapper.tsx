@@ -21,14 +21,15 @@ function SidebarWrapper({ children }: { children: React.ReactNode }) {
   const showSideBar = pathname !== "/sign-up" && authenticated;
 
   return (
-    <div className="flex">
-      {showSideBar && (
-        <>
-          <Sidebar /> <Navbar />
-        </>
-      )}
-      <main className="flex-1">{children}</main>
-    </div>
+    <div className="flex h-screen">
+      {showSideBar && <Sidebar />}
+
+      <div className="flex-1 flex flex-col">
+        {showSideBar &&  <Navbar/>}
+
+        <main className="flex-1">{children}</main>
+      </div>
+      </div>
   );
 }
 

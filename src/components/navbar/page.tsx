@@ -10,6 +10,8 @@ import { FaComputer } from "react-icons/fa6";
 import { FaMicroscope } from "react-icons/fa";
 import { LuFlaskConical } from "react-icons/lu";
 import { GiRadioactive } from "react-icons/gi";
+import { FaUserEdit } from "react-icons/fa";
+
 
 const links = [
   {
@@ -71,10 +73,13 @@ export default function Navbar() {
   }
 
   return (
-    <div className="w-screen bg-gray-800 flex flex-row-reverse md:flex-row fixed justify-between items-center py-2 px-4 md:p-2 md:ml-56 lg:ml-64 text-white md:border-l-2 border-indigo-600 ">
+    <div className="bg-gray-800 flex flex-row-reverse md:flex-row justify-between items-center py-2 px-4 md:px-14 md:ml-56 lg:ml-64 text-white md:border-l-2 border-indigo-600 ">
       <IoHome className="md:hidden  w-7 h-7 font-extrabold cursor-pointer duration-500" />
-      <h1 className="hidden md:flex ml-12 text-2xl font-semibold cursor-pointer">Home</h1> 
-      <div className="flex items-center gap-4">
+      <div className="flex w-full justify-between">
+        <h1 className="hidden md:flex text-2xl font-semibold cursor-pointer">Home</h1> 
+        <FaUserEdit className="hidden md:block w-8 h-8 font-extrabold place-self-end"/>
+      </div> 
+      <div className="md:hidden flex items-center gap-4">
         {/* rendering the open and close icon conditionally */}
 
         {!open ? (

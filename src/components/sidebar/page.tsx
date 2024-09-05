@@ -36,7 +36,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="hidden fixed top-0 left-0 h-full md:w- lg:w-64 bg-gray-800 text-white md:flex flex-col">
+      <div className="hidden fixed top-0 left-0 h-full md:w-56 lg:w-64 bg-gray-800 text-white md:flex flex-col">
         <h1 className="px-8 py-4 text-3xl font-bold ">E-labs</h1>
         <nav className="flex-1 px-7 py-4">
           <ul className="text-lg">
