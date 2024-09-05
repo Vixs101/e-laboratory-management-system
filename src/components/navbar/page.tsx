@@ -73,13 +73,12 @@ export default function Navbar() {
   }
 
   return (
-    <div className="bg-gray-800 flex flex-row-reverse md:flex-row justify-between items-center py-2 px-4 md:px-14 md:ml-56 lg:ml-64 text-white md:border-l-2 border-indigo-600 ">
-      <IoHome className="md:hidden  w-7 h-7 font-extrabold cursor-pointer duration-500" />
+    <div className="fixed w-full md:w-auto border-b-2 md:border-b-0 md:static bg-gray-800 flex flex-row-reverse md:flex-row justify-between items-center py-2 px-7 md:px-14 md:ml-56 lg:ml-64 text-white md:border-l-2 border-indigo-600 ">
       <div className="flex w-full justify-between">
         <h1 className="hidden md:flex text-2xl font-semibold cursor-pointer">Home</h1> 
         <FaUserEdit className="hidden md:block w-8 h-8 font-extrabold place-self-end"/>
       </div> 
-      <div className="md:hidden flex items-center gap-4">
+      <div className="md:hidden w-11/12 md:w-auto flex items-center gap-4">
         {/* rendering the open and close icon conditionally */}
 
         {!open ? (
@@ -98,7 +97,7 @@ export default function Navbar() {
       {/* rendering the links */}
 
       {open && (
-        <div className="md:hidden absolute flex flex-col gap-5 px-7 py-3 text-lg font-semibold left-0 top-2 mt-12 h-[calc(100vh-7rem)] w-[calc(100vw-10rem)] bg-gray-800 text-white rounded-lg duration-500">
+        <div className="absolute flex flex-col gap-5 px-7 py-3 text-lg font-semibold left-0 top-2 mt-12 h-[calc(100vh-7rem)] w-[calc(100vw-10rem)] bg-gray-800 text-white rounded-lg duration-500 border-2 border-indigo-600">
           {links.map((item) => (
             <Link href={item.url} key={item.id} onClick={() => setOpen(false)}>
               <div className="flex gap-2 hover:bg-gray-700 rounded p-2 h-10 items-center">
