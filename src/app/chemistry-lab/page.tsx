@@ -34,8 +34,6 @@ export default function ChemistryLab() {
           ))}
         </div>
       </main>
-     
-      </main>
     </AuthGuard>
   )
 }
