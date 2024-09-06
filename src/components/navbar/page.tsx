@@ -23,25 +23,25 @@ const links = [
   {
     id: 2,
     title: "Computer Lab",
-    url: "/",
+    url: "/computer-lab",
     icon: <FaComputer />,
   },
   {
     id: 3,
     title: "Biology Lab",
-    url: "/",
+    url: "/biology-lab",
     icon: <FaMicroscope />,
   },
   {
     id: 4,
     title: "Chemistry Lab",
-    url: "/",
+    url: "/chemistry-lab",
     icon: <LuFlaskConical />,
   },
   {
     id: 5,
     title: "Physics Lab",
-    url: "/",
+    url: "/physics-lab",
     icon: <GiRadioactive />,
   },
 ];

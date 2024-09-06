@@ -47,25 +47,25 @@ export default function Sidebar() {
               </Link>
             </li>
             <li className="mb-4 text-white hover:bg-gray-700 block p-2 rounded">
-              <Link href="/" className="flex gap-2 items-center">
+              <Link href="/computer-lab" className="flex gap-2 items-center">
                 <FaComputer />
                 Computer Lab
               </Link>
             </li>
             <li className="mb-4 text-white hover:bg-gray-700 block p-2 rounded">
-              <Link href="/" className="flex gap-2 items-center">
+              <Link href="/biology-lab" className="flex gap-2 items-center">
                 <FaMicroscope className="flex gap-2 items-center" />
                 Biology Lab
               </Link>
             </li>
             <li className="mb-4 text-white hover:bg-gray-700 block p-2 rounded">
-              <Link href="/" className="flex gap-2 items-center">
+              <Link href="/chemistry-lab" className="flex gap-2 items-center">
                 <LuFlaskConical />
                 Chemistry Lab
               </Link>
             </li>
             <li className="mb-4 text-white hover:bg-gray-700 block p-2 rounded">
-              <Link href="/" className="flex gap-2 items-center">
+              <Link href="/physics-lab" className="flex gap-2 items-center">
                 <GiRadioactive />
                 Physics Lab
               </Link>

@@ -36,6 +36,6 @@ export default function Home() {
           </p>
         </div>
       </main>
-     </AuthGuard>
+    </AuthGuard>
   );
 }
