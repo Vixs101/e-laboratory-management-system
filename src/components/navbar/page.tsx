@@ -11,6 +11,7 @@ import { FaMicroscope } from "react-icons/fa";
 import { LuFlaskConical } from "react-icons/lu";
 import { GiRadioactive } from "react-icons/gi";
 import { FaUserEdit } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa";
 
 
 const links = [
@@ -43,6 +44,12 @@ const links = [
     title: "Physics Lab",
     url: "/physics-lab",
     icon: <GiRadioactive />,
+  },
+  {
+    id:6,
+    title: "About",
+    url: "/about",
+    icon: <FaBookOpen />, 
   },
 ];
 
@@ -97,7 +104,7 @@ export default function Navbar() {
       {/* rendering the links */}
 
       {open && (
-        <div className="absolute flex flex-col gap-5 px-7 py-3 text-lg font-semibold left-0 top-2 mt-12 h-[calc(100vh-7rem)] w-[calc(100vw-10rem)] bg-gray-800 text-white rounded-lg duration-500 border-2 border-indigo-600">
+        <div className="absolute flex flex-col gap-5 px-7 py-3 text-lg font-semibold left-0 top-2 mt-12 h-[calc(100vh-7rem)] w-[calc(100vw-5rem)] bg-gray-800 text-white rounded-lg duration-500 border-2 border-indigo-600">
           {links.map((item) => (
             <Link href={item.url} key={item.id} onClick={() => setOpen(false)}>
               <div className="flex gap-2 hover:bg-gray-700 rounded p-2 h-10 items-center">

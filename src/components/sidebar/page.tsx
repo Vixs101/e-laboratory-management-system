@@ -8,6 +8,7 @@ import { FaComputer } from "react-icons/fa6";
 import { FaMicroscope } from "react-icons/fa";
 import { LuFlaskConical } from "react-icons/lu";
 import { GiRadioactive } from "react-icons/gi";
+import { FaBookOpen } from "react-icons/fa";
 
 export default function Sidebar() {
   const router = useRouter();
@@ -68,6 +69,12 @@ export default function Sidebar() {
               <Link href="/physics-lab" className="flex gap-2 items-center">
                 <GiRadioactive />
                 Physics Lab
+              </Link>
+            </li>
+            <li className="mb-4 text-white hover:bg-gray-700 block p-2 rounded">
+              <Link href="/about" className="flex gap-2 items-center">
+                <FaBookOpen />
+                About
               </Link>
             </li>
             <li>
