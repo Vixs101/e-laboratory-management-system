@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    <html lang="en" className="bg-gray-900">
        <body className={inter.className}>
           <SidebarWrapper>
             { children }

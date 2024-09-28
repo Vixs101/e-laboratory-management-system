@@ -16,7 +16,7 @@ export default function Home() {
               className={
                 "rounded text-white text-center md:w-1/3 p-2 text-xl bg-indigo-600 hover:bg-indigo-500"}
             >
-              Lorem ipsum
+              History
             </button>
 
           </aside>

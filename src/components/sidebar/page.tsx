@@ -9,6 +9,15 @@ import { FaMicroscope } from "react-icons/fa";
 import { LuFlaskConical } from "react-icons/lu";
 import { GiRadioactive } from "react-icons/gi";
 import { FaBookOpen } from "react-icons/fa";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectLabel,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../components/ui/select"
 
 export default function Sidebar() {
   const router = useRouter();
@@ -76,6 +85,24 @@ export default function Sidebar() {
                 <FaBookOpen />
                 About
               </Link>
+            </li>
+            <li>
+              <Select>
+                <SelectTrigger className="">
+                  <SelectValue placeholder="Staff Menu" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Staffs</SelectLabel>
+                    <Link href="#" className="flex gap-2 items-center">
+                      <SelectItem value="AcademicStaff">Academic Staffs</SelectItem>
+                    </Link>
+                    <Link href="#" className="flex gap-2 items-center">
+                      <SelectItem value="nonAcademicStaff">Non-Academic Staffs</SelectItem>
+                    </Link>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </li>
             <li>
               <button
