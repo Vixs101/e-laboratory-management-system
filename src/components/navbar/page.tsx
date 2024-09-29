@@ -12,7 +12,15 @@ import { LuFlaskConical } from "react-icons/lu";
 import { GiRadioactive } from "react-icons/gi";
 import { FaUserEdit } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa";
-
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectLabel,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../components/ui/select";
 
 const links = [
   {
@@ -114,6 +122,35 @@ export default function Navbar() {
 
             </Link>
           ))}
+          <Select>
+            <SelectTrigger>
+              <SelectValue placeholder="Staff menu" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Staffs</SelectLabel>
+                  <SelectItem 
+                    value="AcademicStaff" 
+                    onClick={() => {
+                      router.push("/academic-staffs");
+                      console.log("clicked");
+                      setOpen(false)
+                    }}>
+                      Academic Staffs
+                  </SelectItem>
+                  <SelectItem 
+                    value="nonAcademicStaff"
+                    onClick={() => {
+                      router.push("/non-academic-staffs");
+                      console.log("clicked");
+                      setOpen(false);
+                    }}
+                    >
+                      Non-Academic Staffs
+                  </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
           <button
             type="button"
             onClick={() => { handleSignOut()}}

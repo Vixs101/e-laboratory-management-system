@@ -94,10 +94,10 @@ export default function Sidebar() {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Staffs</SelectLabel>
-                    <Link href="#" className="flex gap-2 items-center">
+                    <Link href="/academic-staffs" className="flex gap-2 items-center">
                       <SelectItem value="AcademicStaff">Academic Staffs</SelectItem>
                     </Link>
-                    <Link href="#" className="flex gap-2 items-center">
+                    <Link href="/non-academic-staffs" className="flex gap-2 items-center">
                       <SelectItem value="nonAcademicStaff">Non-Academic Staffs</SelectItem>
                     </Link>
                   </SelectGroup>
