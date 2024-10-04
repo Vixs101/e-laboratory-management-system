@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
-import {signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { IoClose, IoHome } from "react-icons/io5";
 import { MdOutlineSort } from "react-icons/md";
 import { FaComputer } from "react-icons/fa6";
@@ -54,14 +54,12 @@ const links = [
     icon: <GiRadioactive />,
   },
   {
-    id:6,
+    id: 6,
     title: "About",
     url: "/about",
     icon: <FaBookOpen />, 
   },
 ];
-
-
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -84,8 +82,18 @@ export default function Navbar() {
         default:
           console.error("sign out error:", error);
       }
+      alert(errorMessage);
     })
   }
+
+  const handleStaffSelect = (value: string) => {
+    if (value === "AcademicStaff") {
+      router.push("/academic-staffs");
+    } else if (value === "nonAcademicStaff") {
+      router.push("/non-academic-staffs");
+    }
+    setOpen(false);
+  };
 
   return (
     <div className="fixed w-full md:w-auto border-b-2 md:border-b-0 md:static bg-gray-800 flex flex-row-reverse md:flex-row justify-between items-center py-2 px-7 md:px-14 md:ml-56 lg:ml-64 text-white md:border-l-2 border-indigo-600 ">
@@ -94,8 +102,6 @@ export default function Navbar() {
         <FaUserEdit className="hidden md:block w-8 h-8 font-extrabold place-self-end"/>
       </div> 
       <div className="md:hidden w-11/12 md:w-auto flex items-center gap-4">
-        {/* rendering the open and close icon conditionally */}
-
         {!open ? (
           <MdOutlineSort
             className="w-10 h-10 font-extrabold cursor-pointer duration-500"
@@ -109,8 +115,6 @@ export default function Navbar() {
         )}
         <h1 className="md:hidden text-2xl font-bold">E-labs</h1>       
       </div>
-      {/* rendering the links */}
-
       {open && (
         <div className="absolute flex flex-col gap-5 px-7 py-3 text-lg font-semibold left-0 top-2 mt-12 h-[calc(100vh-7rem)] w-[calc(100vw-5rem)] bg-gray-800 text-white rounded-lg duration-500 border-2 border-indigo-600">
           {links.map((item) => (
@@ -119,44 +123,28 @@ export default function Navbar() {
                 {item.icon}
                 {item.title}
               </div>
-
             </Link>
           ))}
-          <Select>
-            <SelectTrigger>
+          <Select onValueChange={handleStaffSelect}>
+            <SelectTrigger className="w-full">
               <SelectValue placeholder="Staff menu" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
                 <SelectLabel>Staffs</SelectLabel>
-                  <SelectItem 
-                    value="AcademicStaff" 
-                    onClick={() => {
-                      router.push("/academic-staffs");
-                      console.log("clicked");
-                      setOpen(false)
-                    }}>
-                      Academic Staffs
-                  </SelectItem>
-                  <SelectItem 
-                    value="nonAcademicStaff"
-                    onClick={() => {
-                      router.push("/non-academic-staffs");
-                      console.log("clicked");
-                      setOpen(false);
-                    }}
-                    >
-                      Non-Academic Staffs
-                  </SelectItem>
+                <SelectItem value="AcademicStaff">
+                  Academic Staffs
+                </SelectItem>
+                <SelectItem value="nonAcademicStaff">
+                  Non-Academic Staffs
+                </SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
           <button
             type="button"
-            onClick={() => { handleSignOut()}}
-            className={
-              "rounded text-white text-center w-3/4 p-2 bg-indigo-600 hover:bg-indigo-500"
-            }
+            onClick={handleSignOut}
+            className="rounded text-white text-center w-3/4 p-2 bg-indigo-600 hover:bg-indigo-500"
           >
             Logout
           </button>
